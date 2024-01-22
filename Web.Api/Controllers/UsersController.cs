@@ -30,6 +30,20 @@ public class UsersController
         var result = await mediator.Send(operation);
         return result;
     }
+    [HttpGet]
+    public async Task<ApiResponse<List<UserResponse>>> GetAllUser()
+    {
+        var operation = new GetAllUsersQuery();
+        var result = await mediator.Send(operation);
+        return result;
+    }
+    [HttpGet]
+    public async Task<ApiResponse<UserResponse>> GetByIdUser(int id)
+    {
+        var operation = new GetUserByIdQuery(id);
+        var result = await mediator.Send(operation);
+        return result;
+    }
     [HttpDelete]
     public async Task<ApiResponse> DeleteUser(int id)
     {
