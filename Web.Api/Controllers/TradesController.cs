@@ -17,7 +17,7 @@ public class TradesController:ControllerBase
         this.mediator = mediator;
     }
     [HttpPost("Buy")]
-  //  [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin,user")]
     public async Task<ApiResponse<TradeResponse>> CreateBuyTrade(TradeRequest request)
     {
         
@@ -27,7 +27,7 @@ public class TradesController:ControllerBase
     }
     
     [HttpPost("Sell")]
-   // [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin,user")]
     public async Task<ApiResponse<TradeResponse>> CreateSellTrade(TradeRequest request)
     {
         
@@ -36,8 +36,8 @@ public class TradesController:ControllerBase
         return result;
     }
    
-    [HttpGet]
-    // [Authorize(Roles = "admin")]
+    [HttpGet] 
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse<List<TradeResponse>>> GetAllTrades()
     {
         
@@ -46,8 +46,8 @@ public class TradesController:ControllerBase
         return result;
     }
     
-    [HttpGet]
-    // [Authorize(Roles = "admin,user")]
+    [HttpGet("Id")] 
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse<TradeResponse>> GetTradeById(int id)
     {
         

@@ -1,5 +1,6 @@
 using Base.Response;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Web.Business.Cqrs;
 using Web.Schema;
@@ -23,7 +24,8 @@ public class UsersController
         var result = await mediator.Send(operation);
         return result;
     }
-    [HttpPost]
+    [HttpPut]
+    [Authorize(Roles = "admin,user")]
     public async Task<ApiResponse<UserResponse>> UpdateUser(int id,UserRequest request)
     {
         var operation = new UpdateUserCommand(id,request);
@@ -31,13 +33,15 @@ public class UsersController
         return result;
     }
     [HttpGet]
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse<List<UserResponse>>> GetAllUser()
     {
         var operation = new GetAllUsersQuery();
         var result = await mediator.Send(operation);
         return result;
     }
-    [HttpGet]
+    [HttpGet("Id")]
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse<UserResponse>> GetByIdUser(int id)
     {
         var operation = new GetUserByIdQuery(id);
@@ -45,6 +49,7 @@ public class UsersController
         return result;
     }
     [HttpDelete]
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse> DeleteUser(int id)
     {
         var operation = new DeleteUserCommand(id);

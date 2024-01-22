@@ -1,5 +1,6 @@
 using Base.Response;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Web.Business.Cqrs;
 using Web.Schema;
@@ -18,6 +19,7 @@ namespace Exchange_Trade_Web_Api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<ShareResponse>> CreateShare(ShareRequest request)
         {
             var command = new CreateShareCommand(request);
@@ -26,6 +28,7 @@ namespace Exchange_Trade_Web_Api.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<ShareResponse>> UpdateShare(int id, ShareRequest request)
         {
             var command = new UpdateShareCommand(id, request);
@@ -34,6 +37,7 @@ namespace Exchange_Trade_Web_Api.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse> DeleteShare(int id)
         {
             var command = new DeleteShareCommand(id);
@@ -42,6 +46,7 @@ namespace Exchange_Trade_Web_Api.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin,user")]
         public async Task<ApiResponse<List<ShareResponse>>> GetAllShares()
         {
             var query = new GetAllSharesQuery();
@@ -50,6 +55,7 @@ namespace Exchange_Trade_Web_Api.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "admin,user")]
         public async Task<ApiResponse<ShareResponse>> GetShareById(int id)
         {
             var query = new GetShareByIdQuery(id);
