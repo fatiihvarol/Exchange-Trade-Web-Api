@@ -30,6 +30,8 @@ namespace Web.Business.Query
         public async Task<ApiResponse<List<PortfolioResponse>>> Handle(GetAllPortfoliosQuery request, CancellationToken cancellationToken)
         {
             var portfolios = await _dbContext.Set<Portfolio>()
+                .Include(x=>x.TradeLogs)
+                .Include(x=>x.PortfolioItems)
                 .ToListAsync(cancellationToken);
 
             var mapped = _mapper.Map<List<Portfolio>, List<PortfolioResponse>>(portfolios);
@@ -40,6 +42,8 @@ namespace Web.Business.Query
         public async Task<ApiResponse<PortfolioResponse>> Handle(GetPortfolioByIdQuery request, CancellationToken cancellationToken)
         {
             var portfolio = await _dbContext.Set<Portfolio>()
+                .Include(x=>x.TradeLogs)
+                .Include(x=>x.PortfolioItems)
                 .FirstOrDefaultAsync(p => p.Id == request.PortfolioId, cancellationToken);
 
             if (portfolio == null)

@@ -2,6 +2,7 @@ using System.Reflection;
 using System.Text;
 using AutoMapper;
 using Base.Token;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -31,7 +32,10 @@ builder.Services.AddMediatR(cfg =>
 builder.Services.AddScoped<UpdateSharePrice>();
 
 builder.Services.AddScoped<BaseHelperService>();
-
+builder.Services.AddControllers().AddFluentValidation(x =>
+{
+    x.RegisterValidatorsFromAssemblyContaining<CreateUserCommand>();
+});
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Vb Api Management", Version = "v1.0" });
