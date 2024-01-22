@@ -4,6 +4,7 @@ using Base.Response;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Web.Business.Cqrs;
+using Web.Business.Service;
 using Web.Data.DbContext;
 using Web.Data.Entity;
 using Web.Schema;
@@ -17,24 +18,27 @@ public class TradeLogCommandHandler:
 {
     private readonly TradeDbContext _dbContext;
     private readonly IMapper _mapper;
+    private readonly UpdateSharePrice _updateSharePrice;
 
 
-    public TradeLogCommandHandler(TradeDbContext dbContext,IMapper mapper)
+    public TradeLogCommandHandler(TradeDbContext dbContext,IMapper mapper,UpdateSharePrice updateSharePrice)
     {
         _dbContext = dbContext;
         _mapper = mapper;
+        _updateSharePrice = updateSharePrice;
     }
 
     public async Task<ApiResponse<TradeResponse>> Handle(CreateBuyTradeCommand request, CancellationToken cancellationToken)
     {
-        var portfolio =await _dbContext.Set<Portfolio>()
-            .FirstOrDefaultAsync(x=>x.Id==request.Model.PortfolioId,cancellationToken);
+        var portfolio = await _dbContext.Set<Portfolio>()
+            .FirstOrDefaultAsync(x => x.Id == request.Model.PortfolioId, cancellationToken);
 
         if (portfolio is null)
             return new ApiResponse<TradeResponse>("portfolio does not exist");
-        var share =await _dbContext.Set<Share>()
-            .FirstOrDefaultAsync(x=>x.Id==request.Model.ShareId,cancellationToken);
-        
+
+        var share = await _dbContext.Set<Share>()
+            .FirstOrDefaultAsync(x => x.Id == request.Model.ShareId, cancellationToken);
+
         if (share is null)
             return new ApiResponse<TradeResponse>("share does not exist");
 
@@ -49,14 +53,25 @@ public class TradeLogCommandHandler:
             InsertDate = DateTime.Now
         };
 
-        await _dbContext.AddAsync(item, cancellationToken);
+        // Add TradeLog to the context
+        var tradeLog = _mapper.Map<TradeRequest, TradeLog>(request.Model);
+        tradeLog.Type = TradeType.Buy;
+        tradeLog.InsertDate = DateTime.Now;
+
+        await _dbContext.AddAsync(tradeLog,cancellationToken);
+        await _dbContext.AddAsync(item,cancellationToken);
+
+        portfolio.TotalBalance -= share.CurrentPrice * request.Model.Quantity;
         await _dbContext.SaveChangesAsync(cancellationToken);
+
         var mapped = _mapper.Map<TradeRequest, TradeResponse>(request.Model);
         mapped.Type = TradeType.Buy;
+
+        
+        await _updateSharePrice.UpdateSharePriceAfterBuy(request.Model.ShareId, request.Model.Quantity);
         return new ApiResponse<TradeResponse>(mapped);
-
-
     }
+
 
     public async Task<ApiResponse<TradeResponse>> Handle(CreateSellTradeCommand request, CancellationToken cancellationToken)
     {
@@ -88,8 +103,14 @@ public class TradeLogCommandHandler:
        var mapped = _mapper.Map<TradeRequest, TradeResponse>(request.Model);
        mapped.Type = TradeType.Sell;
 
+       
+       await _updateSharePrice.UpdateSharePriceAfterSell(request.Model.ShareId, request.Model.Quantity);
+
        return new ApiResponse<TradeResponse>(mapped);
        
 
     }
+    
+    
+    
 }

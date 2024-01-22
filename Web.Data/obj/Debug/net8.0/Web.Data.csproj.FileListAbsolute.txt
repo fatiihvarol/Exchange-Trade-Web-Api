@@ -15,3 +15,4 @@ C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\re
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\Web.Data.pdb
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\Web.Data.genruntimeconfig.cache
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\ref\Web.Data.dll
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\Web.Data.sourcelink.json

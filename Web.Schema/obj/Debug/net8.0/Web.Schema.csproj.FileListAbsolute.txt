@@ -13,3 +13,4 @@ C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\bin\Debug\net8.0\
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\bin\Debug\net8.0\Web.Base.pdb
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\Web.Schema.csproj.AssemblyReference.cache
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\Web.Schema.csproj.CopyComplete
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\Web.Schema.sourcelink.json

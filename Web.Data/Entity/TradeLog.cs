@@ -12,8 +12,4 @@ public class TradeLog:BaseEntity
     
     public int Quantity { get; set; }
     public TradeType Type { get; set; } 
-    public DateTime Timestamp { get; set; }
-    
-    
-
 }

@@ -3,6 +3,7 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Web.Business.Cqrs;
 using Web.Business.Mapper;
+using Web.Business.Service;
 using Web.Data.DbContext;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,7 @@ builder.Services.AddSingleton(mapperConfig.CreateMapper());
 
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(CreateBuyTradeCommand).GetTypeInfo().Assembly));
+builder.Services.AddScoped<UpdateSharePrice>();
 
 var app = builder.Build();
 

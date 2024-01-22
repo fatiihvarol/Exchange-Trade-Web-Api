@@ -9,3 +9,4 @@ C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Base\obj\Debug\net8.0\We
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Base\obj\Debug\net8.0\refint\Web.Base.dll
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Base\obj\Debug\net8.0\Web.Base.pdb
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Base\obj\Debug\net8.0\ref\Web.Base.dll
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Base\obj\Debug\net8.0\Web.Base.sourcelink.json
