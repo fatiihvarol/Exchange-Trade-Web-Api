@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Query\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Web.Base\Web.Base.csproj" />
       <ProjectReference Include="..\Web.Data\Web.Data.csproj" />
       <ProjectReference Include="..\Web.Schema\Web.Schema.csproj" />

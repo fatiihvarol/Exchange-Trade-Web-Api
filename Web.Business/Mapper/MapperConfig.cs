@@ -10,5 +10,9 @@ public class MapperConfig : Profile
     {
         CreateMap<TradeRequest, TradeResponse>();
         CreateMap<TradeRequest, TradeLog>();
+
+        CreateMap<UserRequest, User>();
+        CreateMap<User, UserResponse>();
+        CreateMap<UserRequest, UserResponse>();
     }
 }
