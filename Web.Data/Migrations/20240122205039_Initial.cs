@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Web.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial2 : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -111,7 +111,6 @@ namespace Web.Data.Migrations
                     ShareId = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     Type = table.Column<int>(type: "int", nullable: false),
-                    Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false),
                     InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -157,6 +156,45 @@ namespace Web.Data.Migrations
                 name: "IX_TradeLogs_ShareId",
                 table: "TradeLogs",
                 column: "ShareId");
+            
+            
+            // Seed Users
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Name", "Surname", "IdentityNumber", "Email", "UserName", "Password", "Role", "Budget", "InsertDate", "IsActive" },
+                values: new object[,]
+                {
+                    { 1, "Admin", "AdminSurname", "AdminIdentity", "admin@example.com", "admin", "adminpassword", "admin", 10000.00m, DateTime.Now, true },
+                    { 2, "User1", "User1Surname", "User1Identity", "user1@example.com", "user1", "user1password", "user", 5000.00m, DateTime.Now, true },
+                    { 3, "User2", "User2Surname", "User2Identity", "user2@example.com", "user2", "user2password", "user", 6000.00m, DateTime.Now, true },
+                    { 4, "User3", "User3Surname", "User3Identity", "user3@example.com", "user3", "user3password", "user", 7000.00m, DateTime.Now, true },
+                    { 5, "User4", "User4Surname", "User4Identity", "user4@example.com", "user4", "user4password", "user", 8000.00m, DateTime.Now, true },
+                    { 6, "User5", "User5Surname", "User5Identity", "user5@example.com", "user5", "user5password", "user", 9000.00m, DateTime.Now, true }
+                });
+
+            // Seed Portfolios
+            migrationBuilder.InsertData(
+                table: "Portfolios",
+                columns: new[] { "Id", "UserId", "TotalBalance", "InsertDate", "IsActive" },
+                values: new object[,]
+                {
+                    { 1, 2, 5000.00m, DateTime.Now, true },
+                    { 2, 3, 6000.00m, DateTime.Now, true },
+                    { 3, 4, 7000.00m, DateTime.Now, true },
+                    { 4, 5, 8000.00m, DateTime.Now, true },
+                    { 5, 6, 9000.00m, DateTime.Now, true }
+                });
+
+            // Seed Shares
+            migrationBuilder.InsertData(
+                table: "Shares",
+                columns: new[] { "Id", "Symbol", "CurrentPrice", "TotalAmount", "InsertDate", "IsActive" },
+                values: new object[,]
+                {
+                    { 1, "THY", 10.00m, 100, DateTime.Now, true },
+                    { 2, "GMR", 20.00m, 150, DateTime.Now, true },
+                    { 3, "AKB", 30.00m, 200, DateTime.Now, true }
+                });
         }
 
         /// <inheritdoc />

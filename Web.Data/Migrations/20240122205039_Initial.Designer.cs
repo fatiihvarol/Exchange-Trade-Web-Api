@@ -12,8 +12,8 @@ using Web.Data.DbContext;
 namespace Web.Data.Migrations
 {
     [DbContext(typeof(TradeDbContext))]
-    [Migration("20240122145950_Initial3")]
-    partial class Initial3
+    [Migration("20240122205039_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
