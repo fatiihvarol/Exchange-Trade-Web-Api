@@ -17,3 +17,4 @@ C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Business\obj\Debug\net8.
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Business\obj\Debug\net8.0\Web.Business.csproj.CopyComplete
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Business\bin\Debug\net8.0\Web.Data.dll
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Business\bin\Debug\net8.0\Web.Data.pdb
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Business\obj\Debug\net8.0\Web.Business.sourcelink.json

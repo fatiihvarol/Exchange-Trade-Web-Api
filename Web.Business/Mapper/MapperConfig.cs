@@ -8,6 +8,5 @@ public class MapperConfig : Profile
     public MapperConfig()
     {
         CreateMap<TradeRequest, TradeResponse>();
-
     }
 }

@@ -58,8 +58,38 @@ public class TradeLogCommandHandler:
 
     }
 
-    public Task<ApiResponse<TradeResponse>> Handle(CreateSellTradeCommand request, CancellationToken cancellationToken)
+    public async Task<ApiResponse<TradeResponse>> Handle(CreateSellTradeCommand request, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var portfolio =await _dbContext.Set<Portfolio>()
+            .FirstOrDefaultAsync(x=>x.Id==request.Model.PortfolioId,cancellationToken);
+        if (portfolio is null)
+            return new ApiResponse<TradeResponse>("portfolio does not exist");
+        
+        var portfolioItem =await _dbContext.Set<PortfolioItem>()
+            .FirstOrDefaultAsync(x=>x.ShareId==request.Model.ShareId,cancellationToken);
+        
+        if (portfolioItem is null)
+            return new ApiResponse<TradeResponse>("share does not exist in your portfolio");
+        
+        if (portfolioItem.Quantity<request.Model.Quantity)
+            return new ApiResponse<TradeResponse>("you dont have enough share's quantity");
+        
+        var share =await _dbContext.Set<Share>()
+            .FirstOrDefaultAsync(x=>x.Id==request.Model.ShareId,cancellationToken);
+
+        share.TotalAmount += request.Model.Quantity;
+
+        portfolioItem.Quantity -= request.Model.Quantity;
+        portfolio.TotalBalance += share.CurrentPrice * request.Model.Quantity;
+
+
+       await _dbContext.SaveChangesAsync(cancellationToken);
+
+       var mapped = _mapper.Map<TradeRequest, TradeResponse>(request.Model);
+       mapped.Type = TradeType.Sell;
+
+       return new ApiResponse<TradeResponse>(mapped);
+       
+
     }
 }

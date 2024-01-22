@@ -89,3 +89,4 @@ C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Api\bin\Debug\net8.0\Web
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Api\bin\Debug\net8.0\Web.Schema.dll
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Api\bin\Debug\net8.0\Web.Business.pdb
 C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Api\bin\Debug\net8.0\Web.Schema.pdb
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Api\obj\Debug\net8.0\Web.Api.sourcelink.json
