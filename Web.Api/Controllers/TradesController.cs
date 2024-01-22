@@ -1,5 +1,6 @@
 using Base.Response;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Web.Business.Cqrs;
 using Web.Schema;
@@ -16,6 +17,7 @@ public class TradesController:ControllerBase
         this.mediator = mediator;
     }
     [HttpPost("Buy")]
+  //  [Authorize(Roles = "admin")]
     public async Task<ApiResponse<TradeResponse>> CreateBuyTrade(TradeRequest request)
     {
         
@@ -25,6 +27,8 @@ public class TradesController:ControllerBase
     }
     
     [HttpPost("Sell")]
+   // [Authorize(Roles = "admin")]
+
     public async Task<ApiResponse<TradeResponse>> CreateSellTrade(TradeRequest request)
     {
         
