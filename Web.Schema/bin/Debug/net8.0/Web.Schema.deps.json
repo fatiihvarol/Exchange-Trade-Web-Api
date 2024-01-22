@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Web.Schema/1.0.0": {
+        "dependencies": {
+          "Web.Base": "1.0.0"
+        },
+        "runtime": {
+          "Web.Schema.dll": {}
+        }
+      },
+      "Web.Base/1.0.0": {
+        "runtime": {
+          "Web.Base.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Web.Schema/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Web.Base/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

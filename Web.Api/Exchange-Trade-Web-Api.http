@@ -1,0 +1,6 @@
+@Exchange_Trade_Web_Api_HostAddress = http://localhost:5210
+
+GET {{Exchange_Trade_Web_Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

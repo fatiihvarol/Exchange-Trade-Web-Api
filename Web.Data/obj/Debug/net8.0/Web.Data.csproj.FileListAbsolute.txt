@@ -1,0 +1,17 @@
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\bin\Debug\net8.0\Web.Data.deps.json
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\bin\Debug\net8.0\Web.Data.runtimeconfig.json
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\bin\Debug\net8.0\Web.Data.dll
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\bin\Debug\net8.0\Web.Data.pdb
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\bin\Debug\net8.0\Web.Base.dll
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\bin\Debug\net8.0\Web.Base.pdb
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\Web.Data.csproj.AssemblyReference.cache
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\Web.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\Web.Data.AssemblyInfoInputs.cache
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\Web.Data.AssemblyInfo.cs
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\Web.Data.csproj.CoreCompileInputs.cache
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\Web.Data.csproj.CopyComplete
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\Web.Data.dll
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\refint\Web.Data.dll
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\Web.Data.pdb
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\Web.Data.genruntimeconfig.cache
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Data\obj\Debug\net8.0\ref\Web.Data.dll

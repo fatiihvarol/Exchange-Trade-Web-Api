@@ -1,0 +1,15 @@
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\bin\Debug\net8.0\Web.Schema.deps.json
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\bin\Debug\net8.0\Web.Schema.dll
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\bin\Debug\net8.0\Web.Schema.pdb
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\Web.Schema.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\Web.Schema.AssemblyInfoInputs.cache
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\Web.Schema.AssemblyInfo.cs
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\Web.Schema.csproj.CoreCompileInputs.cache
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\Web.Schema.dll
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\refint\Web.Schema.dll
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\Web.Schema.pdb
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\ref\Web.Schema.dll
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\bin\Debug\net8.0\Web.Base.dll
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\bin\Debug\net8.0\Web.Base.pdb
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\Web.Schema.csproj.AssemblyReference.cache
+C:\Users\fatih\RiderProjects\Exchange-Trade-Web-Api\Web.Schema\obj\Debug\net8.0\Web.Schema.csproj.CopyComplete
